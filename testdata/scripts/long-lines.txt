@@ -53,6 +53,37 @@ func LongButNotWorthSplitting(argument1, argument2, argument3, argument4, argume
 // extra input parameters.
 func NeverSplitResults(argument1, argument2, argument3, argument4, argument5 int) (result1 int, result2, result3, result4, result5 bool) {
 }
+
+// Test merging short lines
+// If a comment exists on top of the var block everything is fine.
+// If not, it messes things up?
+var (
+	AccountRequestsDefaultPermissions = []string{
+		"ReadAccountsDetail",
+		"ReadBalances",
+		"ReadBeneficiariesDetail",
+		"ReadDirectDebits",
+		"ReadProducts",
+		"ReadStandingOrdersDetail",
+		"ReadTransactionsCredits",
+		"ReadTransactionsDebits",
+		"ReadTransactionsDetail",
+	}
+)
+
+var (
+	AccountRequestsDefaultPermissionsMessy = []string{
+		"ReadAccountsDetail",
+		"ReadBalances",
+		"ReadBeneficiariesDetail",
+		"ReadDirectDebits",
+		"ReadProducts",
+		"ReadStandingOrdersDetail",
+		"ReadTransactionsCredits",
+		"ReadTransactionsDebits",
+		"ReadTransactionsDetail",
+	}
+)
 -- foo.go.golden --
 package p
 
@@ -110,3 +141,34 @@ func LongButNotWorthSplitting(argument1, argument2, argument3, argument4, argume
 // extra input parameters.
 func NeverSplitResults(argument1, argument2, argument3, argument4, argument5 int) (result1 int, result2, result3, result4, result5 bool) {
 }
+
+// Test merging short lines
+// If a comment exists on top of the var block everything is fine.
+// If not, it messes things up?
+var (
+	AccountRequestsDefaultPermissions = []string{
+		"ReadAccountsDetail",
+		"ReadBalances",
+		"ReadBeneficiariesDetail",
+		"ReadDirectDebits",
+		"ReadProducts",
+		"ReadStandingOrdersDetail",
+		"ReadTransactionsCredits",
+		"ReadTransactionsDebits",
+		"ReadTransactionsDetail",
+	}
+)
+
+var (
+	AccountRequestsDefaultPermissionsMessy = []string{
+		"ReadAccountsDetail",
+		"ReadBalances",
+		"ReadBeneficiariesDetail",
+		"ReadDirectDebits",
+		"ReadProducts",
+		"ReadStandingOrdersDetail",
+		"ReadTransactionsCredits",
+		"ReadTransactionsDebits",
+		"ReadTransactionsDetail",
+	}
+)
